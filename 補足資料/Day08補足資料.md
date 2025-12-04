@@ -18,6 +18,8 @@ npm --version
 sudo npm install -g aws-cdk@latest
 cdk --version
 ```
+# 参考 CDK CLIのアンインストール
+npm uninstall -g aws-cdk
 
 ## CDK の初期セットアップ
 ```bash
