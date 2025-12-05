@@ -24,7 +24,7 @@ sudo npm uninstall -g aws-cdk
 
 ## CDK の初期セットアップ
 ```bash
-mkdir simple-weather-news-cdk-project
+mkdir simple-weather-news-cdk-project　# これを個人ごとに変える！
 cd simple-weather-news-cdk-project
 cdk init app --language typescript
 cdk bootstrap
