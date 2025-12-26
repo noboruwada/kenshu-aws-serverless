@@ -10,7 +10,7 @@ export class SimpleWeatherNewsCdkProjectStack extends cdk.Stack {
     super(scope, id, props);
 
     // Lambda関数1: 全天気データ取得（閲覧者用）
-    /* Day08-03
+    /* No6 セクション21
     const getAllWeatherPublicFunction = new lambda.Function(this, 'GetAllWeatherPublicFunction', {
       runtime: lambda.Runtime.PYTHON_3_13,
       handler: 'index.lambda_handler',
@@ -20,17 +20,17 @@ export class SimpleWeatherNewsCdkProjectStack extends cdk.Stack {
     */
 
     // Lambda関数2: 特定都市の天気データ取得（閲覧者用）
-    /* Day08-04
+    /* No6 セクション22
     const getCityWeatherPublicFunction = new lambda.Function(this, 'GetCityWeatherPublicFunction', {
       runtime: lambda.Runtime.PYTHON_3_13,
       handler: 'index.lambda_handler',
-      code: , //TODO(Day08-04)
-      functionName: '' //TODO(Day08-04)
+      code: , //TODO(No6 セクション22)
+      functionName: '' //TODO(No6 セクション22)
     });
     */
 
     // DynamoDB読み取り権限をLambda関数に付与
-    /* Day08-03
+    /* No6 セクション21
     const dynamoDbPolicy = new iam.PolicyStatement({
       effect: iam.Effect.ALLOW,
       actions: [
@@ -43,11 +43,11 @@ export class SimpleWeatherNewsCdkProjectStack extends cdk.Stack {
     });
     */
 
-    //getAllWeatherPublicFunction.addToRolePolicy(dynamoDbPolicy); //Day08-03
-    //TODO(Day08-04)
+    //getAllWeatherPublicFunction.addToRolePolicy(dynamoDbPolicy); //No6 セクション21
+    //TODO(No6 セクション22)
 
     // HTTP API の追加
-    /* Day10-01
+    /* No8 セクション25
     const httpApi = new apigatewayv2.HttpApi(this, 'WeatherPublicHttpApi', {
       apiName: 'simple-weather-news-api-public',
       corsPreflight: {
@@ -59,7 +59,7 @@ export class SimpleWeatherNewsCdkProjectStack extends cdk.Stack {
     */
 
     // GET /all エンドポイント
-    /* Day10-01
+    /* No8 セクション25
     const getAllIntegration = new integrations.HttpLambdaIntegration('GetAllWeatherIntegration', getAllWeatherPublicFunction);
     httpApi.addRoutes({
       path: '/all',
@@ -69,12 +69,12 @@ export class SimpleWeatherNewsCdkProjectStack extends cdk.Stack {
     */
 
     // GET /{cityId} エンドポイント
-    /* Day10-02
-    const getCityIntegration = new integrations.HttpLambdaIntegration('GetCityWeatherIntegration', ); //TODO(Day10-02)
+    /* No8 セクション25
+    const getCityIntegration = new integrations.HttpLambdaIntegration('GetCityWeatherIntegration', ); //TODO(No8 セクション25)
     httpApi.addRoutes({
-      path: '', //TODO(Day10-02)
+      path: '', //TODO(No8 セクション25)
       methods: [apigatewayv2.HttpMethod.GET],
-      integration: , //TODO(Day10-02)
+      integration: , //TODO(No8 セクション25)
     });
     */
   }
