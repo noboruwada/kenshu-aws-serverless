@@ -100,14 +100,14 @@
         }
       },
       mounted() {
-        /* Day6-6 のタイミングでコメントアウトを外す（ここから） */
+        /* No5 セクション17 のタイミングでコメントアウトを外す（ここから） */
         /*
         if (!authService.isAuthenticated()) {
           window.location.href = 'index.html';
           return;
         }
         */
-        /* Day6-6 のタイミングでコメントアウトを外す（ここまで） */
+        /* No5 セクション17 のタイミングでコメントアウトを外す（ここまで） */
 
         this.initializePage();
       },
@@ -128,11 +128,11 @@
         },
         async fetchCityData() {
           try {
-            /* No4 までの実装, Day6-6 でコメントアウト（ここから） */
+            /* No4 までの実装, No5 セクション17 でコメントアウト（ここから） */
             const response = await fetch(`${CONFIG.API_BASE_URL}/${this.cityId}`);
-            /* No4 までの実装, Day6-6 でコメントアウト（ここまで） */
+            /* No4 までの実装, No5 セクション17 でコメントアウト（ここまで） */
 
-            /* Day6-6 でコメントアウトを外す（ここから） */
+            /* No5 セクション17 でコメントアウトを外す（ここから） */
             /*
             const response = await fetch(`${CONFIG.API_BASE_URL}/${this.cityId}`, {
               headers: {
@@ -146,7 +146,7 @@
               return;
             }
             */
-            /* Day6-6 でコメントアウトを外す（ここまで） */
+            /* No5 セクション17 でコメントアウトを外す（ここまで） */
 
             const data = await response.json();
             this.currentCity = data;
@@ -170,9 +170,9 @@
               method: 'PUT',
               headers: {
                 'Content-Type': 'application/json',
-                // Day6-7 のタイミングでコメントアウトを外す（ここから）
+                // No5 セクション17 のタイミングでコメントアウトを外す（ここから）
                 //'Authorization': `Bearer ${authService.getAccessToken()}`,
-                // Day6-7 のタイミングでコメントアウトを外す（ここまで）
+                // No5 セクション17 のタイミングでコメントアウトを外す（ここまで）
               },
               body: JSON.stringify({
                 weatherId: weatherId,
@@ -180,13 +180,13 @@
               })
             });
 
-            // Day6-7 のタイミングでコメントアウトを外す（ここから）
+            // No5 セクション17 のタイミングでコメントアウトを外す（ここから）
             //if (response.status === 401) {
             //  authService.signOut();
             //  window.location.href = 'index.html';
             //  return;
             //}
-            // Day6-7 のタイミングでコメントアウトを外す（ここまで）
+            // No5 セクション17 のタイミングでコメントアウトを外す（ここまで）
 
             if (response.ok) {
               alert(`${this.currentCity.cityName}の天気を更新しました！`);
@@ -206,12 +206,12 @@
           window.location.href = 'list.html';
         },
         logout() {
-          /* Day6-7 からの実装（ここから） */
+          /* No5 セクション17 からの実装（ここから） */
           /*
           authService.signOut();
           window.location.href = 'index.html';
           */
-          /* Day6-7 からの実装（ここまで） */
+          /* No5 セクション17 からの実装（ここまで） */
         },
         getWeatherIcon(weatherName) {
           const icons = {
