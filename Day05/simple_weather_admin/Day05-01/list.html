@@ -67,14 +67,14 @@
         }
       },
       mounted() {
-        /* Day6-5 のタイミングでコメントアウトを外す（ここから）*/
+        /* No5 セクション17 のタイミングでコメントアウトを外す（ここから）*/
         /*
         if (!authService.isAuthenticated()) {
           window.location.href = 'index.html';
           return;
         }
         */
-        /* Day6-5 のタイミングでコメントアウトを外す（ここまで）*/
+        /* No5 セクション17 のタイミングでコメントアウトを外す（ここまで）*/
 
         /* No4 セクション13 のタイミングでコメントアウトを外す（ここから） */
         //this.fetchWeatherData();
@@ -83,11 +83,11 @@
       methods: {
         async fetchWeatherData() {
           try {
-            /* No4 までの実装、Day6-5 でコメントアウト（ここから） */
+            /* No4 までの実装、No5 セクション17 でコメントアウト（ここから） */
             const response = await fetch(`${CONFIG.API_BASE_URL}/all`);
-            /* No4 までの実装、Day6-5 でコメントアウト（ここまで） */
+            /* No4 までの実装、No5 セクション17 でコメントアウト（ここまで） */
 
-            /* Day6-5 でコメントアウトを外す（ここから） */
+            /* No5 セクション17 でコメントアウトを外す（ここから） */
             /*
             const response = await fetch(`${CONFIG.API_BASE_URL}/all`, {
               headers: {
@@ -100,7 +100,7 @@
               return;
             }
             */
-            /* Day6-5 でコメントアウトを外す（ここまで） */
+            /* No5 セクション17 でコメントアウトを外す（ここまで） */
 
             const data = await response.json();
             this.cities = data;
@@ -112,12 +112,12 @@
           window.location.href = `detail.html?cityId=${cityId}`;
         },
         logout() {
-          /* Day6-5 でコメントアウトを外す（ここから） */
+          /* No5 セクション17 でコメントアウトを外す（ここから） */
           /*
           authService.signOut();
           window.location.href = 'index.html';
           */
-          /* Day6-5 でコメントアウトを外す（ここまで） */
+          /* No5 セクション17 でコメントアウトを外す（ここまで） */
         },
         getWeatherIcon(weatherName) {
           const icons = {
