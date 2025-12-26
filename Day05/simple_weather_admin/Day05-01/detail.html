@@ -117,9 +117,9 @@
           const urlParams = new URLSearchParams(window.location.search);
           this.cityId = parseInt(urlParams.get('cityId'));
 
-          // 該当都市のデータを取得 Day5-3 のタイミングでコメントアウトする
+          // 該当都市のデータを取得 No4 セクション13 のタイミングでコメントアウトする
           this.currentCity = this.cities.find(city => city.cityId === this.cityId) || {};
-          // API呼び出しで都市データを取得 Day5-3 のタイミングでコメントアウトを外す
+          // API呼び出しで都市データを取得 No4 セクション13 のタイミングでコメントアウトを外す
           //await this.fetchCityData();
 
           // フォームの初期値を設定
