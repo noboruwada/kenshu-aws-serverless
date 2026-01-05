@@ -8,7 +8,7 @@ def lambda_handler(event, context):
     city_id = event['pathParameters']['cityId']
     
     response = dynamodb_client.get_item(
-        TableName='simple-weather-news-table',
+        TableName='"yourname"-simple-weather-news-table',
         Key={
             'CityId': {
                 'N': city_id
