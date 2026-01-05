@@ -10,27 +10,27 @@ export class SimpleWeatherNewsCdkProjectStack extends cdk.Stack {
     super(scope, id, props);
 
     // Lambda関数1: 全天気データ取得（閲覧者用）
-    /* No6 セクション21
+    /* No6 セクション19
     const getAllWeatherPublicFunction = new lambda.Function(this, 'GetAllWeatherPublicFunction', {
       runtime: lambda.Runtime.PYTHON_3_13,
       handler: 'index.lambda_handler',
       code: lambda.Code.fromAsset('lambda/get_all_weather_public'),
-      functionName: 'get_all_weather_public_function'
+      functionName: '"yourname"-get_all_weather_public_function'
     });
     */
 
     // Lambda関数2: 特定都市の天気データ取得（閲覧者用）
-    /* No6 セクション22
+    /* No6 セクション20
     const getCityWeatherPublicFunction = new lambda.Function(this, 'GetCityWeatherPublicFunction', {
       runtime: lambda.Runtime.PYTHON_3_13,
       handler: 'index.lambda_handler',
-      code: , //TODO(No6 セクション22)
-      functionName: '' //TODO(No6 セクション22)
+      code: , //TODO(No6 セクション20)
+      functionName: '' //TODO(No6 セクション20)
     });
     */
 
     // DynamoDB読み取り権限をLambda関数に付与
-    /* No6 セクション21
+    /* No6 セクション19
     const dynamoDbPolicy = new iam.PolicyStatement({
       effect: iam.Effect.ALLOW,
       actions: [
@@ -38,18 +38,18 @@ export class SimpleWeatherNewsCdkProjectStack extends cdk.Stack {
         'dynamodb:GetItem'
       ],
       resources: [
-        'arn:aws:dynamodb:*:*:table/simple-weather-news-table'
+        'arn:aws:dynamodb:*:*:table/"yourname"-simple-weather-news-table'
       ]
     });
     */
 
-    //getAllWeatherPublicFunction.addToRolePolicy(dynamoDbPolicy); //No6 セクション21
-    //TODO(No6 セクション22)
+    //getAllWeatherPublicFunction.addToRolePolicy(dynamoDbPolicy); //No6 セクション19
+    //TODO(No6 セクション20)
 
     // HTTP API の追加
-    /* No8 セクション25
+    /* No8 セクション23
     const httpApi = new apigatewayv2.HttpApi(this, 'WeatherPublicHttpApi', {
-      apiName: 'simple-weather-news-api-public',
+      apiName: '"yourname"-simple-weather-news-api-public',
       corsPreflight: {
         allowOrigins: ['*'],
         allowMethods: [apigatewayv2.CorsHttpMethod.GET],
@@ -59,7 +59,7 @@ export class SimpleWeatherNewsCdkProjectStack extends cdk.Stack {
     */
 
     // GET /all エンドポイント
-    /* No8 セクション25
+    /* No8 セクション23
     const getAllIntegration = new integrations.HttpLambdaIntegration('GetAllWeatherIntegration', getAllWeatherPublicFunction);
     httpApi.addRoutes({
       path: '/all',
@@ -69,12 +69,12 @@ export class SimpleWeatherNewsCdkProjectStack extends cdk.Stack {
     */
 
     // GET /{cityId} エンドポイント
-    /* No8 セクション25
-    const getCityIntegration = new integrations.HttpLambdaIntegration('GetCityWeatherIntegration', ); //TODO(No8 セクション25)
+    /* No8 セクション23
+    const getCityIntegration = new integrations.HttpLambdaIntegration('GetCityWeatherIntegration', ); //TODO(No8 セクション23)
     httpApi.addRoutes({
-      path: '', //TODO(No8 セクション25)
+      path: '', //TODO(No8 セクション23)
       methods: [apigatewayv2.HttpMethod.GET],
-      integration: , //TODO(No8 セクション25)
+      integration: , //TODO(No8 セクション23)
     });
     */
   }
