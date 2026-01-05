@@ -15,7 +15,7 @@ export class SimpleWeatherNewsCdkProjectStack extends cdk.Stack {
       runtime: lambda.Runtime.PYTHON_3_13,
       handler: 'index.lambda_handler',
       code: lambda.Code.fromAsset('lambda/get_all_weather_public'),
-      functionName: '"yourname"-get_all_weather_public_function'
+      functionName: '"yourname"-get-all-weather-public-function'
     });
     */
 
